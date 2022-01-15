@@ -17,6 +17,7 @@ import parseEmojis from './parseEmojis'
 const removeMarkdownTokens = (str: string): string => String(str)
   .replace(/(\[(.[^\]]+)\]\((.[^)]+)\))/g, '$2')  // []()
   .replace(/(`|\*{1,3}|_)(.*?[^\\])\1/g, '$2')    // `{t}` | *{t}* | **{t}** | ***{t}*** | _{t}_
+  .replace(/\{.*\}$/g, '') // Remove custom attributes at the end of headers. Eg: {#custom-anchor}, {.custom-class}, etc
   .replace(/(\\)(\*|_|`|\!|<)/g, '$2')           // remove escape char '\'
 
 const trim = (str: string): string => str.trim()

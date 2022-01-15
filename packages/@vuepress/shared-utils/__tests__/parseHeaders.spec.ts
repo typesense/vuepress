@@ -18,6 +18,9 @@ describe('parseHeaders', () => {
       '\\_vue\\_': '_vue_',
       '\\*vue\\*': '*vue*',
       '\\!vue\\!': '!vue!',
+      'Header {#custom-anchor}': 'Header',
+      'Header {.custom-class}': 'Header',
+      'Header {Not at end} End': 'Header {Not at end} End',
 
       // #2688
       '[vue](vuejs.org) / [vue](vuejs.org)': 'vue / vue',
